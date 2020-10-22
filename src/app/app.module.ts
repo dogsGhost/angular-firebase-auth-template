@@ -7,10 +7,17 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ForgotPasswordComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +26,7 @@ import { AppComponent } from './app.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

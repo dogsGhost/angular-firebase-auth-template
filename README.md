@@ -1,6 +1,6 @@
 # Angular Project Boilerplate with Firebase Email Auth
 
-Base for starting an Angular project that uses email/password for user authentication.
+Base for starting an Angular project that uses email/password for user authentication. NOTE: email verification is not included here.
 
 If Angular CLI is not already installed, install it:
 
