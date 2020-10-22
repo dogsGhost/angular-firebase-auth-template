@@ -15,6 +15,11 @@ export class AuthService {
     public router: Router,
   ) { }
 
+  authState(): any {
+    const result = this.fireAuth.authState;
+    console.log(result);
+  }
+
   async signIn(email: string, password: string): Promise<any> {
     try {
       const result = await this.fireAuth.signInWithEmailAndPassword(email, password);
