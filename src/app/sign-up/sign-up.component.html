@@ -1,1 +1,14 @@
-<p>sign-up works!</p>
+<h2>Sign Up</h2>
+<form (NgSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email</label>
+    <input required id="email" name="email" type="email" placeholder="your@email.com" [(ngModel)]="email">
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input required id="password" name="password" type="password" [(ngModel)]="password">
+  </div>
+
+  <button type="submit">Create Account</button>
+</form>
