@@ -1,0 +1,8 @@
+<ng-template [ngIf]="!isLoggedIn">
+  <app-sign-in></app-sign-in>
+</ng-template>
+
+<ng-template [ngIf]="isLoggedIn">
+  <p>Replace this with the default component to show when user is logged in.</p>
+  <a href="#">log out</a>
+</ng-template>

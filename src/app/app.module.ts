@@ -12,13 +12,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthService } from './services/auth.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ForgotPasswordComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
