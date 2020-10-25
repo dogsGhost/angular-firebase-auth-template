@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -7,14 +7,30 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  isLoggedIn: boolean;
+  user: firebase.User;
+  isLoading = true;
 
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
-    // this.isLoggedIn = this.authService.authState;
+    this.authService.authState().subscribe(user => {
+      if (user) {
+        this.user = user;
+      }
+
+      this.isLoading = false;
+    });
+  }
+
+  logout(): void {
+    this.authService.signOut().then(res => {
+      // no response if successful
+      if (!res) {
+        this.user = undefined;
+      }
+    });
   }
 
 }
