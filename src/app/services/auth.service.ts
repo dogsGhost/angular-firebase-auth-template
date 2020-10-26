@@ -22,10 +22,8 @@ export class AuthService {
   async signIn(email: string, password: string): Promise<any> {
     try {
       const result = await this.fireAuth.signInWithEmailAndPassword(email, password);
-      console.log('result', result);
       return result;
     } catch (err) {
-      console.error('error', err.message);
       return err;
     }
   }
@@ -34,8 +32,10 @@ export class AuthService {
     try {
       const result = await this.fireAuth.createUserWithEmailAndPassword(email, password);
       console.log(result);
+      return result;
     } catch (err) {
       console.error(err.message);
+      return err;
     }
   }
 
@@ -43,8 +43,10 @@ export class AuthService {
     try {
       const result = this.fireAuth.sendPasswordResetEmail(email);
       console.log(result);
+      return result;
     } catch (err) {
       console.error(err.message);
+      return err;
     }
   }
 

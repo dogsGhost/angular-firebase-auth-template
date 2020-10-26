@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  user: firebase.User;
+  user = undefined;
   isLoading = true;
 
   constructor(
@@ -25,11 +25,13 @@ export class HomeComponent implements OnInit {
   }
 
   logout(): void {
+    this.isLoading = true;
     this.authService.signOut().then(res => {
       // no response if successful
       if (!res) {
         this.user = undefined;
       }
+      this.isLoading = false;
     });
   }
 
