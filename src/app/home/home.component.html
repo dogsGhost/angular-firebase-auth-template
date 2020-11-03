@@ -3,11 +3,13 @@
 </ng-template>
 
 <ng-template [ngIf]="!isLoading">
-  <ng-template *ngIf="user; else signInBlock">
+  <div *ngIf="user; else signInBlock">
     <!-- replace the following markup with your own -->
     <p>If you are reading this, you are logged in. Replace this with the default component to show when user is logged in.</p>
     <button (click)="logout()">log out</button>
     <!-- end markup replacement -->
+  </div>
+  <ng-template #signInBlock>
+    <app-sign-in></app-sign-in>
   </ng-template>
-  <app-sign-in #signInBlock></app-sign-in>
 </ng-template>
